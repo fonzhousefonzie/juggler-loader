@@ -1,0 +1,284 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    background-image: url(background.svg);
+    background-size: 150px;
+}
+
+.loader{
+    width: 100vw;
+    margin: auto;
+    height: 100vh;
+}
+
+.juggler{
+    width: 400px;
+    height: 400px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    background-image: url(juggler.svg);
+    background-repeat: no-repeat;
+    background-size: 200px;
+    background-position: center;
+    animation: go-right-and-left 1s linear infinite;
+    filter: drop-shadow(0px 10px 10px black);
+}
+
+.juggler *{
+    position: absolute;
+}
+
+.braccio-destro{
+    width: 38px;
+    top: 45%;
+    left: 38%;
+    animation: braccio-destro 0.4s linear infinite;
+}
+
+.braccio-sinistro{
+    width: 56px;
+    top: 31%;
+    left: 27.7%;
+    animation: braccio-sinistro 0.4s linear infinite;
+}
+
+.coscia{
+    width: 65px;
+}
+
+.coscia.davanti{
+    top: 50%;
+    left: 40%;
+    animation: coscia-davanti 1s linear infinite;
+}
+
+.coscia.dietro{
+    top: 49%;
+    left: 38%;
+    transform: rotate(23deg);
+    animation: coscia-dietro 1s linear infinite;
+}
+
+.gamba{
+    width: 55px;
+}
+
+.gamba.davanti{
+    top: 60%;
+    left: 40%;
+    animation: gamba-davanti 1s linear infinite;
+}
+
+.gamba.dietro{
+    top: 59%;
+    left: 33%;
+    transform: rotate(31deg);
+    animation: gamba-dietro 1s linear infinite;
+}
+
+.piede{
+    width: 40px;
+}
+
+.piede.davanti{
+    top: 73%;
+    left: 46%;
+    transform: rotate(327deg);
+    animation: piede-davanti 1s linear infinite;
+}
+
+.piede.dietro{
+    top: 72%;
+    left: 33%;
+    transform: rotate(4deg);
+    animation: piede-dietro 1s linear infinite;
+}
+
+.wheel{
+    width: 100px;
+    left: 47%;
+    top: 64%;
+    transform: translateX(-50%);
+    animation: rotation-right-left 1s linear infinite;
+}
+
+.balls{
+    width: 100px;
+    height: 200px;
+    left: 25%;
+}
+
+.ball{
+    width: 15px;
+    top: 65%;
+    left: 7%;
+    animation: ball-rotation 1s linear infinite;
+}
+
+.ball-1{
+    animation-delay: 0;
+}
+
+.ball-2{
+    animation-delay: 0.2s;
+}
+
+.ball-3{
+    animation-delay: 0.4s;
+}
+
+.ball-4{
+    animation-delay: 0.6s;
+}
+
+.ball-5{
+    animation-delay: 0.8s;
+}
+
+@keyframes rotation-right-left {
+
+    40%{
+        transform: translateX(-50%) rotate(45deg);
+    }
+
+    80%{
+        transform: translateX(-50%) rotate(-45deg);
+    }
+}
+
+@keyframes go-right-and-left {
+
+    40%{
+        transform: translateY(-50%) translateX(-45%);
+    }
+
+    80%{
+        transform: translateY(-50%) translateX(-55%);
+    }
+}
+
+@keyframes ball-rotation{
+    from, to{
+        top: 65%;
+        left: 7%;
+    }
+
+    20%{
+        top: 32%;
+        left: 15%;
+    }
+
+    40%{
+        top: 0%;
+        left: 50%;
+    }
+
+    60%{
+        top: 32%;
+        left: 65%;
+    }
+
+    80%{
+        top: 90%;
+        left: 55%;
+    }
+}
+
+@keyframes piede-davanti {
+
+    40%{
+        top: 75%;
+        left: 48%;
+    }
+    
+    80%{
+        top: 71%;
+        left: 44%;
+    }
+
+}
+
+@keyframes coscia-davanti {
+    40%{
+        transform: rotate(-10deg);
+        left: 41%;
+    }
+
+    80%{
+        transform: rotate(+10deg);
+        left: 39%;
+    }
+}
+
+@keyframes gamba-davanti {
+    40%{
+        top: 62%;
+        left: 42%;
+    }
+
+    80%{
+        top: 58%;
+        left: 38%;
+    }
+}
+
+@keyframes piede-dietro {
+
+    40%{
+        top: 70%;
+    }
+    
+    80%{
+        top: 74%;
+    }
+
+}
+
+@keyframes coscia-dietro {
+    40%{
+        transform: rotate(33deg);
+    }
+
+    80%{
+        transform: rotate(13deg);
+    }
+}
+
+@keyframes gamba-dietro {
+    40%{
+        top: 57%;
+    }
+
+    80%{
+        top: 61%;
+    }
+}
+
+@keyframes braccio-destro {
+    from, to {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(20deg);
+    }
+}
+
+@keyframes braccio-sinistro {
+
+    from, to {
+        transform: rotate(-10deg) translateY(4px);
+    }
+
+    50% {
+        transform: rotate(10deg) translateY(-4px);
+    }
+}
